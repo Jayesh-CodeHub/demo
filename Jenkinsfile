@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    label 'docker-agent'
+  }
 
   environment {
     IMAGE_NAME = "jayyy48/flask-demo"
@@ -43,7 +45,6 @@ pipeline {
             """
           }
 
-          // Save artifact reference
           sh "echo ${imageTag} > image.txt"
           archiveArtifacts artifacts: 'image.txt', fingerprint: true
         }
