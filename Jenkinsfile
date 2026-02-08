@@ -82,7 +82,7 @@ pipeline {
 
         script {
           def image = readFile("image.txt").trim()
-          echo "🏭 PROD (main) is using image: ${image}"
+          echo "🏭 PROD (main) is using the image: ${image}"
         }
       }
     }
